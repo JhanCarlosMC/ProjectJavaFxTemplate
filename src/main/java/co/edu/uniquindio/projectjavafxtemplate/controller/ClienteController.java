@@ -1,11 +1,10 @@
 package co.edu.uniquindio.projectjavafxtemplate.controller;
 
-import co.edu.uniquindio.projectjavafxtemplate.model.Cliente;
-import co.edu.uniquindio.projectjavafxtemplate.model.Empresa;
+import co.edu.uniquindio.projectjavafxtemplate.model.*;
 
 import java.util.Collection;
 
-public class ClienteController {
+public class ClienteController implements ICrudCliente {
     Empresa empresa;
 
     public ClienteController(Empresa empresa) {
@@ -13,11 +12,11 @@ public class ClienteController {
     }
 
     public boolean crearCliente(Cliente cliente) {
-        return empresa.agregarCliente(cliente);
+        return empresa.crearCliente(cliente);
     }
 
     public Collection<Cliente> obtenerListaClientes() {
-        return empresa.getClientes();
+        return empresa.obtenerListaClientes();
     }
 
     public boolean eliminarCliente(String cedula) {

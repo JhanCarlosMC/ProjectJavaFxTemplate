@@ -3,7 +3,7 @@ package co.edu.uniquindio.projectjavafxtemplate.model;
 import java.util.Collection;
 import java.util.LinkedList;
 
-public class Empresa {
+public class Empresa implements ICrudCliente{
     private String nombre;
     private Collection<Cliente> clientes;
 
@@ -20,7 +20,7 @@ public class Empresa {
         this.nombre = nombre;
     }
 
-    public Collection<Cliente> getClientes() {
+    public Collection<Cliente> obtenerListaClientes() {
         return clientes;
     }
 
@@ -28,7 +28,7 @@ public class Empresa {
         this.clientes = clientes;
     }
 
-    public boolean agregarCliente(Cliente cliente) {
+    public boolean crearCliente(Cliente cliente) {
         boolean centinela = false;
         if (!verificarCliente(cliente.getCedula())) {
             clientes.add(cliente);
